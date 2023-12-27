@@ -13,9 +13,14 @@ function findFirst(arr, low = 0, high = arr.length - 1) {
     } else if (arr[mid] === 1) {
       return findFirst(arr, mid + 1, high);
     }
-    return firstFirst(arr, low, mid - 1);
+    return findFirst(arr, low, mid - 1);
   }
   return -1;
 }
 
 module.exports = countZeroes;
+
+countZeroes([1, 1, 1, 1, 0, 0]); // 2
+countZeroes([1, 0, 0, 0, 0]); // 4
+countZeroes([0, 0, 0]); // 3
+countZeroes([1, 1, 1, 1]); // 0
